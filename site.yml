@@ -4,7 +4,7 @@ runtime:
 site:
   title: Deploying multi-container applications in Openshift
   url: https://albertogd.github.io/rh-upm-multicontainer/rh-upm-multicontainer/index.html
-  start_page: template-tutorial::index.adoc
+  start_page: rh-upm-multicontainer::index.adoc
 
 content:
   sources:
@@ -25,9 +25,6 @@ ui:
     snapshot: true
   supplemental_files:
     - path: ./supplemental-ui
-    - path: .nojekyll
-    - path: ui.yml
-      contents: "static_files: [ .nojekyll ]"
 
 output:
   dir: ./gh-pages

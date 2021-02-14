@@ -51,7 +51,7 @@ image::deployment-env.png[]
 
 image::topology.png[]
 
-[#delte]
+[#delete]
 == Delete the PHP application pod
 
 **2) Go to Administrator, Workloads, Pods. Select the Apache pod, and Delete the pod. Wait around 1 minute, and then check again to access the application. Are you able to access? Why? **

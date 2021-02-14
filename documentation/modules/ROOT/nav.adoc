@@ -13,5 +13,5 @@
 
 * xref:04-apache.adoc[3. Create a multi-container application in Openshift]
 ** xref:04-apache.adoc#create[Create a PHP application]
-** xref:04-apache.adoc#access[Delete the PHP application pod]
+** xref:04-apache.adoc#delete[Delete the PHP application pod]
 ** xref:04-apache.adoc#ha[Scale application to 2 replicas to ensure HA]

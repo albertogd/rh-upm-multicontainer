@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Create a MySQL application in Openshift :: Deploying multi-container applications in Openshift</title>
+    <link rel="canonical" href="https://albertogd.github.io/rh-upm-multicontainers/rh-upm-multicontainers/index.html/rh-upm-multicontainers/03-mysql.html">
+    <link rel="prev" href="02-multi-container.html">
+    <link rel="next" href="04-apache.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../_/css/site.css">
+<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://developers.redhat.com" target="_blank"><img
+          src="../_/img/header_logo.png" height="40px" alt="Red Hat Developer Program"></a>
+      <a class="navbar-item" href="https://albertogd.github.io/rh-upm-multicontainers/rh-upm-multicontainers/index.html">Deploying multi-container applications in Openshift</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Books</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">CheatSheets</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">CheatSheet A</a>
+            <a class="navbar-item" href="#">CheatSheet B</a>
+            <a class="navbar-item" href="#">CheatSheet C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Upcoming Events</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Event A</a>
+            <a class="navbar-item" href="#">Event B</a>
+            <a class="navbar-item" href="#">Event C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">More Tutorials</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Tutorial A</a>
+            <a class="navbar-item" href="#">Tutorial B</a>
+            <a class="navbar-item" href="#">Tutorial C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rh-upm-multicontainers" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">Deploying multi-container applications in Openshift</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="01-setup.html">1. Setup</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="01-setup.html#prerequisite">Prerequisites</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="02-multi-container.html">2. Run a multi-container web application with Podman</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-multi-container.html#mysql">Run MySQL container</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-multi-container.html#apache">Run Apache container</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-multi-container.html#pod">Create a pod</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-multi-container.html#multicontainers">Run the containers in a pod</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="03-mysql.html">2. Create a MySQL application in Openshift</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#create">Create MySQL application</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#access">Access pod and populate database</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="04-apache.html">3. Create a multi-container application in Openshift</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="04-apache.html#create">Create a PHP application</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="04-apache.html#access">Delete the PHP application pod</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="04-apache.html#ha">Scale application to 2 replicas to ensure HA</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Deploying multi-container applications in Openshift</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">Deploying multi-container applications in Openshift</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Deploying multi-container applications in Openshift</a></li>
+    <li><a href="03-mysql.html">2. Create a MySQL application in Openshift</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/albertogd/rh-upm-multicontainer/edit/master/documentation/modules/ROOT/pages/03-mysql.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Create a MySQL application in Openshift</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this exercise, you will learn to create a MySQL application using the Openshift Web Console.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="create"><a class="anchor" href="#create"></a>Create a MySQL application</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>1) Openshift is a container platform that comes with developer-friendly workflows. Log in to the Openshift web console, and go to Developer View. and then click on +Add. Select Project, and click Create Project. Name the project as you username + “-mysql”.</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/new-app.png" alt="new app">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Create MariaDB (Ephemeral database) with the same variables as before:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>User:  user</p>
+</li>
+<li>
+<p>Password: pass</p>
+</li>
+<li>
+<p>Root Password: rootpass</p>
+</li>
+<li>
+<p>Database: upm</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Scroll down to Database, and select MariaDB (Ephemeral). Fill in with the following variables:</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 40%;">
+<colgroup>
+<col style="width: 60%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">PARAMETER</th>
+<th class="tableblock halign-center valign-top">VALUE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Database Service Name</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">mariadb</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">MariaDB Connection Username</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">user</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">MariaDB root Password</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">rootpass</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">MariaDB Database Name</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">upm</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="access"><a class="anchor" href="#access"></a>Access to MySQL pod and populate the database</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>2) Check that the pod is running. Go to Administrator View, Workloads and Pods. Select MariaDB pod, and select Terminal. Connect to mysql using this command:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ mysql -u$MYSQL_USER -p$MYSQL_PASSWORD $MYSQL_DATABASE -h $MYSQL_SERVICE_HOST</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Execute the following SQL commands in the
+database:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">create table students (name VARCHAR(20));
+INSERT INTO students VALUES ("user");
+select * from students;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="02-multi-container.html">2. Run a multi-container web application with Podman</a></span>
+  <span class="next"><a href="04-apache.html">3. Create a multi-container application in Openshift</a></span>
+</nav>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <a class="rhd-logo" href="https://developers.redhat.com" target="_blank"></div>
+</footer>
+<script src="../_/js/vendor/clipboard.js"></script>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

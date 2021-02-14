@@ -3,7 +3,7 @@ runtime:
 
 site:
   title: Deploying multi-container applications in Openshift
-  url: https://albertogd.github.io/rh-upm-multicontainers/rh-upm-multicontainers/index.html
+  url: https://albertogd.github.io/rh-upm-multicontainer/rh-upm-multicontainer/index.html
   start_page: template-tutorial::index.adoc
 
 content:

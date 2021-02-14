@@ -1,6 +1,6 @@
-# Deploying container applications with Podman
+# Deploying multi-container applications on Openshift
 
-https://albertogd.github.io/rh-upm-multicontainer/rh-upm-multicontainer/index.html[Start **Deploying multi-container applications in Openshift**]
+https://albertogd.github.io/rh-upm-multicontainer/rh-upm-multicontainer/index.html[Start **Deploying multi-container applications on Openshift**]
 
 ## Introduction
 Deploying container applications with Podman is the second of part of **Autoscaling serverless applications in Openshift** workshop to get familiar with containers and autoscaling serverless applications in Openshift. You'll start creating a multi-container web application with Podman. Then, you'll create a MySQL application in Openshift. Finally, you'll create a PHP application and you'll connect it with the MySQL application on Openshift. You'll scale up this application to 2 replicas.

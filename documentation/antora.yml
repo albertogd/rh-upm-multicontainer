@@ -1,4 +1,4 @@
-name: rh-upm-multicontainers
+name: rh-upm-multicontainer
 title: Deploying multi-container applications in Openshift
 version: master
 nav:

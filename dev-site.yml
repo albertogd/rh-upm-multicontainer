@@ -4,7 +4,7 @@ runtime:
 site:
   title: Deploying multi-container applications in Openshift
   url: http://localhost:3000/rhs-build-course/index.html
-  start_page: rh-upm-multicontainers::index.adoc
+  start_page: rh-upm-multicontainer::index.adoc
 
 content:
   sources:

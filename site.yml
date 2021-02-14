@@ -2,8 +2,8 @@ runtime:
   cache_dir: ./.cache/antora
 
 site:
-  title: Template Tutorial
-  url: https://redhat-scholars.github.io/course-template
+  title: Deploying multi-container applications in Openshift
+  url: https://albertogd.github.io/rh-upm-multicontainers/rh-upm-multicontainers/index.html
   start_page: template-tutorial::index.adoc
 
 content:

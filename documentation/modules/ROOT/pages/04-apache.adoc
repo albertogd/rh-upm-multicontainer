@@ -1,0 +1,80 @@
+= Create a multi-container application in Openshift
+
+In this exercise, you will deploy the multi-container application with Apache and MySQL in Openshift.
+
+[#create]
+== Create a PHP application
+
+**1) Go to Developer View. and then click on +Add. Select the project where MySQL was deployed. Then select From Git.**
+
+image::from-git.png[]
+
+Use the following parameters:
+
+* Git Repo URL: https://github.com/albertogd/rh-upm-multicontainer.git
+* Show Advanced Git Options
+** Git Reference: master
+** Context Dir: apps/multi-container
+
+In Builder Image, select PHP
+
+* Application: myhttp
+* Name: myhttp
+
+In Select the resource type to generate, choose **DeploymentConfig** 
+
+Click on Deployment, and add the environment variables:
+
+[cols="^60%,^40%" width="40%"]
+|===
+|NAME|VALUE 
+
+|MYSQL_HOST
+|mariadb
+
+|MYSQL_USER
+|user
+
+|MMYSQL_PASSWORD
+|rootpass
+
+|MYSQL_DATABASE
+|upm
+
+|MYSQL_TABLE
+|students
+|===
+
+image::deployment-env.png[]
+
+**Go to Topology, select PHP, and then go to Resources. In the bottom you’ll find the application URL. Click on the URL, and cheek you’re able to access the application.**
+
+image::topology.png[]
+
+[#delte]
+== Delete the PHP application pod
+
+**2) Go to Administrator, Workloads, Pods. Select the Apache pod, and Delete the pod. Wait around 1 minute, and then check again to access the application. Are you able to access? Why? **
+
+image::all-pods.png[]
+
+After deleting the Pod, Openshift starts a new pod because the Apache application has a replication controller with a desired state of 1 pod.
+
+image::replication-controllers.png[]
+
+When the pod was deleted, the replication controller created another pod to get the desired state of 1 pod.
+
+[#ha]
+**3) Now you must ensure High Availability in our application. The application must be always available (not even 1 minute of downtime) if one Apache pod is removed. Do you think of a way to ensure HA in the web application?**
+
+Scale up the application to 2 replicas. This way, the application will be always available even if a pod is removed.
+
+Go to the DeploymentConfig, and click on the ^ arrow. It’ll scale the application to 2 replicas, and will create another pod.
+
+image::scale.png[]
+
+image::ha-pods.png[]
+
+If one pod is destroyed, the application will continue working using the other pod.
+
+

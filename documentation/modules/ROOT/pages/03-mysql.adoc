@@ -1,0 +1,56 @@
+= Create a MySQL application in Openshift
+
+In this exercise, you will learn to create a MySQL application using the Openshift Web Console.
+
+[#create]
+== Create a MySQL application
+
+**1) Openshift is a container platform that comes with developer-friendly workflows. Log in to the Openshift web console, and go to Developer View. and then click on +Add. Select Project, and click Create Project. Name the project as you username + “-mysql”.**
+
+image::new-app.png[]
+
+**Create MariaDB (Ephemeral database) with the same variables as before:**
+
+* User:  user
+* Password: pass
+* Root Password: rootpass
+* Database: upm
+
+Scroll down to Database, and select MariaDB (Ephemeral). Fill in with the following variables: 
+
+[cols="^60%,^40%" width="40%"]
+|===
+|PARAMETER|VALUE 
+
+|Database Service Name
+|mariadb
+
+|MariaDB Connection Username
+|user
+
+|MariaDB root Password
+|rootpass
+
+|MariaDB Database Name
+|upm
+|===
+
+[#access]
+== Access to MySQL pod and populate the database
+
+**2) Check that the pod is running. Go to Administrator View, Workloads and Pods. Select MariaDB pod, and select Terminal. Connect to mysql using this command:**
+
+[source,bash,subs="+macros,+attributes"]
+----
+$ mysql -u$MYSQL_USER -p$MYSQL_PASSWORD $MYSQL_DATABASE -h $MYSQL_SERVICE_HOST
+----
+
+Execute the following SQL commands in the 
+database:
+
+[source,sql,subs="+macros,+attributes"]
+----
+create table students (name VARCHAR(20));
+INSERT INTO students VALUES ("user");
+select * from students;
+----

@@ -2,9 +2,9 @@ runtime:
   cache_dir: ./.cache/antora
 
 site:
-  title: Template Tutorial(Dev Mode)
+  title: Deploying multi-container applications in Openshift
   url: http://localhost:3000/rhs-build-course/index.html
-  start_page: template-tutorial::index.adoc
+  start_page: rh-upm-multicontainers::index.adoc
 
 content:
   sources:
@@ -13,7 +13,6 @@ content:
       start_path: documentation
 asciidoc:
   attributes:
-    title: Template Tutorial(Dev Mode)
   extensions:
     - ./lib/remote-include-processor.js
     - ./lib/tab-block.js

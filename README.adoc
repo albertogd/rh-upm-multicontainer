@@ -1,22 +1,21 @@
 # Deploying multi-container applications on Openshift
 
-https://albertogd.github.io/rh-upm-multicontainer/rh-upm-multicontainer/index.html[Start **Deploying multi-container applications on Openshift**]
+https://albertogd.github.io/rh-upm-multicontainer/rh-upm-multicontainer/index.html[Start **Deploying multi-container applications on Openshift** exercises]
 
 ## Introduction
 **Deploying multi-container applications on Openshift** is the second of part of **Autoscaling serverless applications in Openshift** workshop to get familiar with containers and autoscaling serverless applications in Openshift. You'll start creating a multi-container web application with Podman. Then, you'll create a MySQL application in Openshift. Finally, you'll create a PHP application and you'll connect it with the MySQL application on Openshift. You'll scale up this application to 2 replicas.
 
 ## Exercises
 
-### 1.  Run a multi-container web application with Podman
+### 1. Run a multi-container web application with Podman
 
 Create and run a multi-container application with MySQL and Apache in a pod with Podman.
 
-### 2. Run a MySQL container with Persistent Storage
+### 2. Create a MySQL application in Openshift
 
 Create a MySQL application using the Openshift Web Console.
 
-
-### 3. Create your own HTTP container image with a Dockerfile
+### 3. Connect an Apache with a MySQL application in Openshift
 
 Create a PHP application, and connect to the MySQL application using the Openshift Web Console. Scale up the application.
 

@@ -78,6 +78,9 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="#access">Access pod and populate database</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#pvc">Check MariaDB PV and PVC</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
@@ -232,8 +235,20 @@ INSERT INTO students VALUES ("user");
 select * from students;</code></pre>
 </div>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="pvc"><a class="anchor" href="#pvc"></a>Check MariaDB PV and PVC</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>3) Check the PVC created for MariaDB database</p>
+</li>
+</ul>
+</div>
 <div class="paragraph">
-<p>Check the Persistent Volume. In the termina, run <code>df -h /var/lib/mysql/data/</code>:</p>
+<p>Check the Persistent Volume. In the terminal, run <code>df -h /var/lib/mysql/data/</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">

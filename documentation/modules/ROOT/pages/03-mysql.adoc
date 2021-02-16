@@ -58,7 +58,12 @@ INSERT INTO students VALUES ("user");
 select * from students;
 ----
 
-Check the Persistent Volume. In the termina, run `df -h /var/lib/mysql/data/`:
+[#pvc]
+== Check MariaDB PV and PVC
+
+* 3) Check the PVC created for MariaDB database
+
+Check the Persistent Volume. In the terminal, run `df -h /var/lib/mysql/data/`:
 
 [source,bash,subs="+macros,+attributes"]
 ----

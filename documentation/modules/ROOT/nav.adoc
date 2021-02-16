@@ -10,6 +10,7 @@
 * xref:03-mysql.adoc[2. Create a MySQL application in Openshift]
 ** xref:03-mysql.adoc#create[Create MySQL application]
 ** xref:03-mysql.adoc#access[Access pod and populate database]
+** xref:03-mysql.adoc#pvc[Check MariaDB PV and PVC]
 
 * xref:04-apache.adoc[3. Create a multi-container application in Openshift]
 ** xref:04-apache.adoc#create[Create a PHP application]

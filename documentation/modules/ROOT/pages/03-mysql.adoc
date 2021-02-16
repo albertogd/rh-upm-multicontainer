@@ -45,7 +45,7 @@ Scroll down to Database, and select MariaDB (Ephemeral). Fill in with the follow
 
 [source,bash,subs="+macros,+attributes"]
 ----
-$ mysql -u$MYSQL_USER -p$MYSQL_PASSWORD $MYSQL_DATABASE -h $MYSQL_SERVICE_HOST
+$ mysql -u$MYSQL_USER -p$MYSQL_PASSWORD $MYSQL_DATABASE -h 127.0.0.1
 ----
 
 Execute the following SQL commands in the 

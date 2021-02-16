@@ -153,7 +153,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p><strong>Create MariaDB (Ephemeral database) with the same variables as before:</strong></p>
+<p><strong>Create MariaDB with the same variables as before:</strong></p>
 </div>
 <div class="ulist">
 <ul>
@@ -202,6 +202,10 @@
 <td class="tableblock halign-center valign-top"><p class="tableblock">MariaDB Database Name</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">upm</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Volume Capacity</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">1Gi</p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -226,6 +230,24 @@ database:</p>
 <pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">create table students (name VARCHAR(20));
 INSERT INTO students VALUES ("user");
 select * from students;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Check the Persistent Volume. In the termina, run <code>df -h /var/lib/mysql/data/</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sh-4.2$ df -h /var/lib/mysql/data/
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vdf        976M  180M  781M  19% /var/lib/mysql/data</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the openshift console, go to <code>Storage/Persistent Volume Claims</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/pvc.png" alt="pvc">
 </div>
 </div>
 </div>

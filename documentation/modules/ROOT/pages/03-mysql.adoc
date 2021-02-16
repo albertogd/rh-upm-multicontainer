@@ -9,7 +9,7 @@ In this exercise, you will learn to create a MySQL application using the Openshi
 
 image::new-app.png[]
 
-**Create MariaDB (Ephemeral database) with the same variables as before:**
+**Create MariaDB with the same variables as before:**
 
 * User:  user
 * Password: pass
@@ -33,6 +33,9 @@ Scroll down to Database, and select MariaDB (Ephemeral). Fill in with the follow
 
 |MariaDB Database Name
 |upm
+
+|Volume Capacity
+|1Gi
 |===
 
 [#access]
@@ -54,3 +57,16 @@ create table students (name VARCHAR(20));
 INSERT INTO students VALUES ("user");
 select * from students;
 ----
+
+Check the Persistent Volume. In the termina, run `df -h /var/lib/mysql/data/`:
+
+[source,bash,subs="+macros,+attributes"]
+----
+sh-4.2$ df -h /var/lib/mysql/data/
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vdf        976M  180M  781M  19% /var/lib/mysql/data
+----
+
+In the openshift console, go to `Storage/Persistent Volume Claims`.
+
+image::pvc.png[]

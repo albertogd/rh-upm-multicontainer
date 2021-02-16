@@ -87,7 +87,7 @@ $ sudo podman pod create --name myapp -p 8080:80
 [source,bash,subs="+macros,+attributes"]
 ----
 $ sudo podman run -d  -v /var/local/mysql:/var/lib/mysql/data -e MYSQL_USER=user -e MYSQL_PASSWORD=pass -e MYSQL_DATABASE=upm -e MYSQL_ROOT_PASSWORD=rootpass --pod myapp rhscl/mysql-57-rhel7
-$ sudo podman run -d -e MYSQL_HOST=127.0.0.1 -e MYSQL_USER=user -e MYSQL_PASSWORD=pass -e MYSQL_DATABASE=upm -e MYSQL_ROOT_PASSWORD=rootpass -e MYSQL_TABLE=students -p 8080:80 --pod myapp myphp:v1
+$ sudo podman run -d -e MYSQL_HOST=127.0.0.1 -e MYSQL_USER=user -e MYSQL_PASSWORD=pass -e MYSQL_DATABASE=upm -e MYSQL_ROOT_PASSWORD=rootpass -e MYSQL_TABLE=students --pod myapp myphp:v1
 ----
 
 

@@ -28,7 +28,10 @@ Scroll down to Database, and select MariaDB (Ephemeral). Fill in with the follow
 |MariaDB Connection Username
 |user
 
-|MariaDB root Password
+|MariaDB Password
+|pass
+
+|MariaDB Root Password
 |rootpass
 
 |MariaDB Database Name

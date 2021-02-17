@@ -36,7 +36,7 @@ Click on Deployment, and add the environment variables:
 |user
 
 |MYSQL_PASSWORD
-|rootpass
+|pass
 
 |MYSQL_DATABASE
 |upm
